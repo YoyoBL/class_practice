@@ -1,0 +1,38 @@
+header {
+   background-color: rgb(160, 209, 252);
+   display: flex;
+   flex-direction: row;
+   padding: 15px;
+   justify-content: space-between;
+}
+
+div {
+   background-color: blue;
+}
+
+nav {
+   background-color: rgb(114, 114, 248);
+}
+
+main {
+   background-color: rgb(160, 209, 252);
+   display: flex;
+   flex-direction: row;
+   padding: 15px;
+   margin-block: 15px;
+}
+
+section {
+   background-color: rgb(224, 241, 255);
+   padding: 15px;
+   margin: 15px;
+   flex-grow: 9;
+}
+
+aside {
+   background-color: rgb(224, 241, 255);
+   padding: 15px;
+   margin: 15px;
+   flex-grow: 1;
+   overflow-wrap: break-word;
+}

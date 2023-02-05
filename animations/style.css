@@ -1,0 +1,23 @@
+.animate {
+   width: 20%;
+   padding: 20px;
+   height: 20px;
+   background-color: rgb(97, 206, 253);
+   text-align: center;
+   color: aliceblue;
+   border: 5px solid darkblue;
+   transition: padding 3s, width 3s;
+}
+
+.animate:hover {
+   padding-block: 50px;
+   background-color: orange;
+   border: 5px solid orangered;
+}
+
+.animate:active {
+   color: black;
+   border: 5px solid rgb(0, 0, 0);
+
+   width: 50%;
+}
