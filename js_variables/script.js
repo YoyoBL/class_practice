@@ -1,57 +1,68 @@
-let name = prompt("שם:");
-let mail = prompt("מייל: ");
-let gender = prompt("מין ז/נ:  ");
+// let name = prompt("שם:");
+// let mail = prompt("מייל: ");
+// let gender = prompt("מין ז/נ:  ");
 
-if (gender === "ז") {
-   alert("ברוך הבא " + name);
+// if (gender === "ז") {
+//    alert("ברוך הבא " + name);
+// }
+
+// if (gender === "נ") {
+//    alert("ברוכה הבאה " + name);
+// }
+
+// if (gender !== "נ") {
+//    if (gender !== "ז") {
+//       gender = alert("בחירה שגויה, אנא בחר ז/נ: ");
+//    }
+// }
+
+// let newsLetter = prompt("would you like to subscribe to our newsletter? y/n");
+
+// if (newsLetter === "y") {
+//    alert("Thank you, your email" + mail + " was registered");
+// }
+
+// if (newsLetter === "n") {
+//    alert("Your'e loss...");
+// }
+
+// if (newsLetter !== "y") {
+//    if (newsLetter !== "n") {
+//       newsLetter = alert("בחירה שגויה");
+//    }
+// }
+
+let age = Number(prompt("Please type you're age:"));
+
+if (Number.isNaN(age)) {
+   //מה לעשות כשלא הוקלד מספר
+   age = prompt("Numbers only 🤓");
 }
 
-if (gender === "נ") {
-   alert("ברוכה הבאה " + name);
-}
+if (age !== null) {
+   //אם המשתמש לוחץ על ביטול הקוד הזה לא ירוץ
+   if (age <= 0) {
+      age = prompt("Very funny, try again idiot😒: ");
+   }
 
-if (gender !== "נ") {
-   if (gender !== "ז") {
-      gender = alert("בחירה שגויה, אנא בחר ז/נ: ");
+   if (age !== null) {
+      //כנ"ל
+      if (age <= 20) {
+         alert("Does your'e mother know your'e here?👶...");
+         age = a;
+      }
+      0;
+
+      if (age <= 50) {
+         alert("You are in the best period of your'e life!😎");
+         age = a;
+      }
+
+      if (age >= 120) {
+         alert("Send my regards to the Almighty🙌");
+      }
    }
 }
-
-let newsLetter = prompt("would you like to subscribe to our newsletter? y/n");
-
-if (newsLetter === "y") {
-   alert("Thank you, your email" + mail + " was registered");
-}
-
-if (newsLetter === "n") {
-   alert("Your'e loss...");
-}
-
-if (newsLetter !== "y") {
-   if (newsLetter !== "n") {
-      newsLetter = alert("בחירה שגויה");
-   }
-}
-
-let age = prompt("Please type you're age:");
-
-if (age <= 0) {
-   age = prompt("Very funny, try again idiot😒: ");
-}
-
-if (age <= 20) {
-   alert("Does your'e mother know your'e here?👶...");
-   age = 0;
-}
-
-if (age <= 50) {
-   alert("You are in the best period of your'e life!😎");
-   age = 0;
-}
-
-if (age >= 120) {
-   alert("Send my regards to the Almighty🙌");
-}
-
 /*
 1. create a new project
 2. receive from the user the following data: 
