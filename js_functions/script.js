@@ -9,8 +9,9 @@ function getUserAge () {
 function getUserName(){
     fullName = prompt("Full name:");
     if (Boolean(Number(fullName)) === false) {
-        return fullName;
+        return "Hello " + fullName;
     }
     return "Your name must have at least one letter";
 }
 
+alert(getUserName());
