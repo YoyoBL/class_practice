@@ -1,0 +1,24 @@
+1. create a new project
+
+2. delete css contents
+
+ 
+
+** change App.js to App.jsx
+
+** run development server
+
+ 
+
+3. change App.js to show a product information card title, category, price, discount, color
+
+4. create a component under src/components called product info
+
+5. copy the div with the product info from app to the new component
+
+6. show the new component using app 
+
+7. change the component to be able to view title, category, price after discount, color dynamicly using props
+
+8. show at least 5 product's information
+

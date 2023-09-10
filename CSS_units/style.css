@@ -1,0 +1,26 @@
+.wp {
+   background-color: aqua;
+   width: 150vw;
+}
+
+.div {
+   background-color: blue;
+   width: 50%;
+}
+
+.a-div {
+   background-color: rgb(204, 137, 44);
+   width: 25%;
+}
+
+.rem {
+   font-size: 0.5rem;
+}
+
+.h1-bigger {
+   font-size: 2.5em;
+}
+
+.a-rem {
+   font-size: 1rem;
+}

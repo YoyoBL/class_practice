@@ -1,0 +1,48 @@
+.navigation {
+   position: sticky;
+   top: 0;
+   background-color: rgb(176, 188, 234);
+   padding: 10px;
+   width: 100%;
+}
+
+.button-div {
+   width: 100%;
+   background-color: brown;
+}
+
+.up {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+
+   /* margin: 100px; */
+   /* z-index: 50; */
+   border-radius: 50%;
+   width: 100px;
+   height: 0;
+   padding-bottom: 100%;
+   background-color: green;
+   padding: 15px;
+   margin: 20px;
+   text-align: justify;
+}
+
+.left {
+   display: inline-block;
+
+   background-color: aqua;
+   width: 40%;
+
+   height: 100px;
+}
+
+.right {
+   position: absolute;
+   right: 0%;
+   top: 0%;
+   margin: 8px;
+   width: 40%;
+   height: 50px;
+   background-color: blue;
+}

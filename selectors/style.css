@@ -1,0 +1,35 @@
+* {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.header h1 {
+   background-color: silver;
+
+   margin-left: auto;
+   margin-right: auto;
+   padding: 20px;
+}
+
+.main {
+   font-size: 0px;
+}
+.main div {
+   display: inline-block;
+   background-color: grey;
+}
+
+.main .left {
+   width: 20%;
+}
+
+.main .right {
+   width: 80%;
+   margin-inline-start: 0px;
+}
+
+.footer div {
+   background-color: silver;
+}

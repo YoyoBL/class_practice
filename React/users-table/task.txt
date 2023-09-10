@@ -1,0 +1,8 @@
+1. create a new react app with bootstrap and bootstrap icons 
+2. create a component for showing names received by props in list (the names list is unique)
+	- use in app twice 
+3. create a component for showing users information as table 
+	- if no users show some notice that there are no users yet
+	- show the following information from https://jsonplaceholder.typicode.com/users
+		number of row, name, username, email, address - city, street, suite, phone, company.name
+	- break the component at rows as userRow

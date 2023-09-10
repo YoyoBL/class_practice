@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <script defer src="./script.js"></script>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="game-area">
+         <div class="row">
+            <div onclick="play(0)" class="cell"></div>
+            <div onclick="play(1)" class="cell cell-middle"></div>
+            <div onclick="play(2)" class="cell"></div>
+         </div>
+         <div class="row middle">
+            <div onclick="play(3)" class="cell"></div>
+            <div onclick="play(4)" class="cell cell-middle"></div>
+            <div onclick="play(5)" class="cell"></div>
+         </div>
+         <div class="row">
+            <div onclick="play(6)" class="cell"></div>
+            <div onclick="play(7)" class="cell cell-middle"></div>
+            <div onclick="play(8)" class="cell"></div>
+         </div>
+      </div>
+   </body>
+   <style>
+      body {
+         background-color: #3b3b3b;
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .flex-center {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      #game-area {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         background-color: #fff;
+         height: 400px;
+         width: 400px;
+      }
+      .row {
+         display: flex;
+         width: 100%;
+         height: 100%;
+      }
+
+      .cell {
+         background-color: #ffffff;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 3rem;
+         font-family: sans-serif;
+      }
+      .middle {
+         border-top: solid 2px black;
+         border-bottom: solid 2px black;
+      }
+
+      .cell-middle {
+         border-left: solid 2px black;
+         border-right: solid 2px black;
+      }
+   </style>
+</html>

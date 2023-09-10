@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body></body>
+
+   <script>
+      const numbers = [
+         5, 2, 3, 4, 34, 543, 542, 32, 32, 332334345, 5, 4, 54, 4565, 65, 776,
+         34,
+      ];
+      const strings = [
+         "daniel",
+         "shalom",
+         "avi",
+         "yora",
+         "lori",
+         "Avigail",
+         "Tav",
+      ];
+      const users = [
+         { name: "daniel", age: 28, city: "tlv" },
+         { name: "shlom", age: 62, city: "jerusalem" },
+         { name: "avi", age: 56, city: "tlv" },
+         { name: "yora", age: 23, city: "holon" },
+         { name: "lori", age: 12, city: "holon" },
+         { name: "avigail", age: 32, city: "tlv" },
+      ];
+
+      console.log(
+         numbers.filter(function (num) {
+            return num % 2 === 1;
+         })
+      );
+
+      console.log(
+         strings.filter(function (name) {
+            return name.length < 4;
+         })
+      );
+
+      console.log(
+         strings.filter(function (name) {
+            return name.includes("v");
+         })
+      );
+
+      console.log(
+         users.filter(function (user) {
+            return user.city === "tlv";
+         })
+      );
+
+      console.log(
+         users.filter(function (user) {
+            return user.age < 18;
+         })
+      );
+
+      // numbers: filter only odd numbers
+      // strings: filter only names with less than 4 letters
+      // strings: filter only names which contains the letter v
+      // strings: filter only elements with even index
+      // users: filter only users who lives in tlv
+      // users: filter only users who are less than 18
+   </script>
+</html>
