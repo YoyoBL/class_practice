@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { generateCards } from "./generateCards";
+import { generateCards } from "../functions/generateCards";
 
 export const useCards = (numOfCards) => {
    const [cards, setCards] = useState(generateCards(numOfCards));
@@ -30,8 +30,7 @@ export const useCards = (numOfCards) => {
          setCards((cards) =>
             cards.map((card) => {
                if (card.id === id) {
-                  const updatedCard = { ...card, isFlipped: true };
-                  return updatedCard;
+                  return { ...card, isFlipped: true };
                }
                return { ...card };
             })
