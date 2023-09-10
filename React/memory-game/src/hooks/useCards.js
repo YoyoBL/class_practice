@@ -4,19 +4,26 @@ import { generateCards } from "./generateCards";
 export const useCards = (numOfCards) => {
    const [cards, setCards] = useState(generateCards(numOfCards));
 
-   const [titles, setTitles] = useState(cards.map((card) => card.title));
+   //__________________________________
 
    const tempFlipped = cards.filter(
       (card) => card.isFlipped && !card.isMatched
    );
    let blockFlip = false;
 
-   //useEffect
+   //__________________________________
+
+   useEffect(() => {
+      console.log(cards.map((card) => card.title));
+   }, []);
+
    useEffect(() => {
       if (tempFlipped.length === 2) {
          checkCardsMatch();
       }
    }, [cards]);
+
+   //__________________________________
 
    const handleCardFlip = (id) => {
       if (!blockFlip) {
@@ -24,7 +31,6 @@ export const useCards = (numOfCards) => {
             cards.map((card) => {
                if (card.id === id) {
                   const updatedCard = { ...card, isFlipped: true };
-                  tempFlipped.push(updatedCard);
                   return updatedCard;
                }
                return { ...card };
