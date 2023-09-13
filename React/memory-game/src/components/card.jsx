@@ -1,8 +1,4 @@
-const Card = ({
-   card: { id, title, isFlipped },
-   backImage,
-   onFlip = () => {},
-}) => {
+const Card = ({ card: { id, title, isFlipped }, onFlip = () => {} }) => {
    return (
       <div className="col">
          <div onClick={() => onFlip(id)} className="position-relative">
