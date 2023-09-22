@@ -1,7 +1,6 @@
-import { useState } from "react";
+import ExpensesListsSelect from "./expensesListsSelect";
 
 const ExpensesLists = ({ lists }) => {
-   const [select, setSelect] = useState(1);
    return (
       <div className="col-12 col-md-3">
          <div className="card">
@@ -36,19 +35,7 @@ const ExpensesLists = ({ lists }) => {
                </button>
             </div>
 
-            <select
-               value={select}
-               onChange={(e) => setSelect(e.target.value)}
-               className="form-select overflow-hidden"
-               aria-label="multiple select"
-               size="2"
-            >
-               {lists.map((list) => (
-                  <option key={list.id} value={list.id}>
-                     {list.title}
-                  </option>
-               ))}
-            </select>
+            <ExpensesListsSelect lists={lists} dropdown={false} />
          </div>
       </div>
    );

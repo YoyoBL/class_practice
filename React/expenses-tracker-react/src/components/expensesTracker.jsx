@@ -3,14 +3,17 @@ import ExpensesTable from "./ExpensesTable";
 import ExpensesHeader from "./expensesHeader";
 import ExpensesLists from "./expensesLists";
 import { useLists } from "./hooks/useLists";
-import { Modal } from "bootstrap";
-import ModalWindow from "./modal";
+import Modals from "./modals/Modals";
 
 const ExpensesTracker = () => {
    const { lists, newList, deleteList } = useLists();
    return (
       <>
-         <ModalWindow />
+         <Modals
+            lists={lists}
+            onNewListItem={(title) => newList(title)}
+            onListDelete={deleteList}
+         />
 
          <div className="container">
             <ExpensesHeader />
@@ -19,7 +22,7 @@ const ExpensesTracker = () => {
             <div dir="rtl" className="row mt-3">
                <ExpensesLists lists={lists} />
 
-               <ExpensesTable />
+               <ExpensesTable onFormAdd={null} />
             </div>
          </div>
       </>

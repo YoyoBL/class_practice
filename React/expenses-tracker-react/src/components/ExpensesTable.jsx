@@ -1,7 +1,7 @@
 import EditDropdownBtn from "./editDropdownBtn";
 import ExpenseForm from "./expenseForm";
 
-const ExpensesTable = () => {
+const ExpensesTable = ({ onFormAdd = () => {} }) => {
    return (
       <div className="col-12 col-md-9">
          <table className="table table-striped text-center">
@@ -27,7 +27,7 @@ const ExpensesTable = () => {
             </thead>
             <tbody>
                <tr className="border border-info table-info">
-                  <ExpenseForm />
+                  <ExpenseForm onAdd={onFormAdd} />
                </tr>
                <tr>
                   <th>1</th>
