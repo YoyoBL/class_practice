@@ -1,0 +1,37 @@
+.about-me {
+   position: relative;
+}
+.about-me::before {
+   content: "";
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: -5px;
+   left: -5px;
+   border: solid #355061 2px;
+   border-radius: 25px;
+   box-shadow: 0px 1px 50px -21px #2b4657 inset, 0px 1px 50px -21px #43667c;
+}
+.about-me::after {
+   content: "";
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 5px;
+   left: 5px;
+   border: solid #3a6d92 2px;
+   border-radius: 25px;
+   box-shadow: 0px 1px 50px -21px #2b4657 inset, 0px 1px 50px -21px #43667c;
+}
+
+.img-thumbnail {
+   background-color: transparent;
+   border: none;
+   min-width: 80px;
+}
+
+@media (max-width: 576px) {
+   .technologies-used {
+      overflow: scroll;
+   }
+}

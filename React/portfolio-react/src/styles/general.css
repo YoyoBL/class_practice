@@ -1,0 +1,4 @@
+.center-all {
+   display: grid;
+   place-items: center;
+}

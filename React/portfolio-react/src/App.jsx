@@ -1,17 +1,22 @@
 import "./App.css";
+import About from "./components/about";
+import Home from "./components/home";
+import NavBar from "./components/navBar";
 
 function App() {
    return (
       <div className="App">
-         <header className="bg-primary">
-            <div className="container ">
-               <nav>NavBar</nav>
-            </div>
+         <header>
+            <NavBar />
          </header>
 
          <main>
             <div className="container">
-               <div className="section">Section</div>
+               <section>
+                  <Home />
+               </section>
+
+               <About />
             </div>
          </main>
          <footer>Footer</footer>

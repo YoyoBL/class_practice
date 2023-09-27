@@ -1,14 +1,17 @@
-const Input = () => {
+const Input = ({ label, error, ...rest }) => {
    return (
-      <form>
-         <div className="form-group my-1">
-            <label htmlFor="email">
-               Email <span className="text-danger">*</span>
-            </label>
-            <input id="email" className="form-control is-invalid" type="text" />
-            <span className="invalid-feedback">error</span>
-         </div>
-      </form>
+      <div className="form-group my-1">
+         <label htmlFor={rest.name}>
+            {label}
+            {rest.required && <span className="text-danger">*</span>}
+         </label>
+         <input
+            {...rest}
+            id={rest.name}
+            className={["form-control", error && "is-invalid"].join(" ")}
+         />
+         <span className="invalid-feedback">{error}</span>
+      </div>
    );
 };
 
