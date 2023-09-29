@@ -1,45 +1,70 @@
+import Joi from "joi";
 import Input from "./common/input";
-import { useForm } from "../hooks/useForm";
+import { useFormik } from "formik";
 
 const Form = () => {
-   const { inputs, handleChange, handleSubmit } = useForm({
-      initialValue: { name: "", email: "", password: "" },
-      onSubmit(value) {
-         console.log(value);
+   const form = useFormik({
+      validateOnMount: true,
+      initialValues: { name: "", email: "", password: "" },
+      validate(values) {
+         const schema = Joi.object({
+            name: Joi.string().min(6).max(255).required(),
+            email: Joi.string()
+               .min(2)
+               .max(255)
+               .required()
+               .email({ tlds: { allow: false } }),
+            password: Joi.string().min(6).max(1024).required(),
+         });
+         const { error } = schema.validate(values, { abortEarly: false });
+         if (!error) {
+            return null;
+         }
+
+         const errors = {};
+
+         for (const detail of error.details) {
+            const key = detail.path[0];
+            errors[key] = detail.message;
+         }
+
+         return errors;
+      },
+      onSubmit(values) {
+         console.log(values);
       },
    });
 
+   function getFieldProps(name) {
+      return {
+         ...form.getFieldProps(name),
+         error: form.touched[name] && form.errors[name],
+      };
+   }
+
    return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={form.handleSubmit}>
          <Input
-            onChange={handleChange}
-            name={"name"}
-            value={inputs.name}
+            {...getFieldProps("name")}
             label={"Name"}
-            error={""}
-            required
             type={"text"}
-            onBlur={handleBlur}
+            required
          />
          <Input
-            onChange={handleChange}
-            name={"email"}
-            value={inputs.email}
+            {...getFieldProps("email")}
             label={"Email"}
-            error={""}
-            required
             type={"email"}
+            required
          />
          <Input
-            onChange={handleChange}
-            name={"password"}
-            value={inputs.password}
+            {...getFieldProps("password")}
             label={"Password"}
-            error={""}
-            required
             type={"password"}
+            required
          />
-         <button>Submit </button>
+         <button disabled={!form.isValid} className="btn btn-primary mt-2">
+            Submit{" "}
+         </button>
       </form>
    );
 };

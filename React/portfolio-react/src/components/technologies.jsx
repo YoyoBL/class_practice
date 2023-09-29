@@ -1,105 +1,42 @@
 import "../styles/technologies.css";
 
-const Technologies = () => {
+const Technologies = ({
+   carousel = true,
+   logos = [
+      "html-5",
+      "css-3",
+      "sass",
+      "bootstrap",
+      "javascript",
+      "typescript",
+      "vscode",
+      "github",
+   ],
+}) => {
+   const generateLogos = (key) => {
+      return (
+         <div
+            key={key}
+            className={["logos-slide", carousel && "slide"].join(" ")}
+         >
+            {logos.map((logo, index) => (
+               <img
+                  key={index}
+                  src={`/images/Icons/${logo}-svgrepo-com.svg`}
+                  alt="Html logo"
+               />
+            ))}
+         </div>
+      );
+   };
    return (
       <div className="row mt-3">
-         <div className="col-12 text-center text-white">
+         <div className="text-center text-white">
             <h3>Technologies</h3>
          </div>
          <div className="logos">
-            <div className="logos-slide">
-               <img
-                  src="/images/Icons/html-5-svgrepo-com.svg"
-                  alt="Html logo"
-               />
-
-               <img src="/images/Icons/css-3-svgrepo-com.svg" alt="Css logo" />
-               <img src="/images/Icons/sass-svgrepo-com.svg" alt="Sass logo" />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/bootstrap-svgrepo-com.svg"
-                  alt="Bootstrap logo"
-               />
-               <img
-                  src="/images/Icons/javascript-svgrepo-com.svg"
-                  alt="JavaScript logo"
-               />
-               <img
-                  src="/images/Icons/typescript-svgrepo-com.svg"
-                  alt="Type-Script logo"
-               />
-               <img
-                  src="/images/Icons/vscode-svgrepo-com.svg"
-                  alt="Vscode logo"
-               />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/github-142-svgrepo-com.svg"
-                  alt="Github logo"
-               />
-            </div>
-            <div className="logos-slide">
-               <img
-                  src="/images/Icons/html-5-svgrepo-com.svg"
-                  alt="Html logo"
-               />
-
-               <img src="/images/Icons/css-3-svgrepo-com.svg" alt="Css logo" />
-               <img src="/images/Icons/sass-svgrepo-com.svg" alt="Sass logo" />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/bootstrap-svgrepo-com.svg"
-                  alt="Bootstrap logo"
-               />
-               <img
-                  src="/images/Icons/javascript-svgrepo-com.svg"
-                  alt="JavaScript logo"
-               />
-               <img
-                  src="/images/Icons/typescript-svgrepo-com.svg"
-                  alt="Type-Script logo"
-               />
-               <img
-                  src="/images/Icons/vscode-svgrepo-com.svg"
-                  alt="Vscode logo"
-               />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/github-142-svgrepo-com.svg"
-                  alt="Github logo"
-               />
-            </div>
-            <div className="logos-slide">
-               <img
-                  src="/images/Icons/html-5-svgrepo-com.svg"
-                  alt="Html logo"
-               />
-
-               <img src="/images/Icons/css-3-svgrepo-com.svg" alt="Css logo" />
-               <img src="/images/Icons/sass-svgrepo-com.svg" alt="Sass logo" />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/bootstrap-svgrepo-com.svg"
-                  alt="Bootstrap logo"
-               />
-               <img
-                  src="/images/Icons/javascript-svgrepo-com.svg"
-                  alt="JavaScript logo"
-               />
-               <img
-                  src="/images/Icons/typescript-svgrepo-com.svg"
-                  alt="Type-Script logo"
-               />
-               <img
-                  src="/images/Icons/vscode-svgrepo-com.svg"
-                  alt="Vscode logo"
-               />
-               <img
-                  className=" bg-white"
-                  src="/images/Icons/github-142-svgrepo-com.svg"
-                  alt="Github logo"
-               />
-            </div>
+            {generateLogos(0)}
+            {carousel && [generateLogos(1), generateLogos(2)]}
          </div>
       </div>
    );
