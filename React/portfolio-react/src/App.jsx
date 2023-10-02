@@ -1,14 +1,12 @@
 import "./App.css";
 import Layout from "./components/layout";
-import NavBar from "./components/navBar";
 import ProjectPage from "./components/projectPage";
 import { Routes, Route } from "react-router-dom";
 
 const projectsList = [
    {
       title: "Expenses-Tracker",
-      link: "https://yoyobl.github.io/Expenses_Tracker",
-      gitHubLink: "Expenses_Tracker",
+      linkAddress: "Expenses_Tracker",
       description: (
          <>
             Keep better track of your expenses with this handy tool. <br />
@@ -20,8 +18,7 @@ const projectsList = [
    },
    {
       title: "Trivia",
-      link: "https://yoyobl.github.io/Trivia",
-      gitHubLink: "Trivia",
+      linkAddress: "Trivia",
       description: (
          <>
             Exciting webpage trivia game with multiple categories. <br />
@@ -32,8 +29,7 @@ const projectsList = [
    },
    {
       title: "Todo-Lists",
-      link: "https://yoyobl.github.io/To_do_list",
-      gitHubLink: "To_do_list",
+      linkAddress: "To_do_list",
       description: (
          <>
             Never forget a task again with this intuitive to-do app! <br />
@@ -45,8 +41,7 @@ const projectsList = [
    },
    {
       title: "Cards Memory Game",
-      link: "https://yoyobl.github.io/Memory_Game_Cards",
-      gitHubLink: "Memory_Game_Cards",
+      linkAddress: "Memory_Game_Cards",
       description: (
          <>
             Have fun with this enjoyable memory card game! <br />
@@ -57,8 +52,7 @@ const projectsList = [
    },
    {
       title: "Snake Game",
-      link: "https://yoyobl.github.io/Snake",
-      gitHubLink: "Snake",
+      linkAddress: "Snake",
       description: (
          <>
             Experience a wave of nostalgia with this classic Snake game that
@@ -71,8 +65,7 @@ const projectsList = [
    },
    {
       title: "Full-Stack Course Summary",
-      link: "https://yoyobl.github.io/summary_bootstrap",
-      gitHubLink: "summary_bootstrap",
+      linkAddress: "summary_bootstrap",
       description: (
          <>
             Access a comprehensive summary of the full stack course, <br />
@@ -87,26 +80,16 @@ const projectsList = [
 function App() {
    return (
       <div className="App">
-         <header>
-            <NavBar />
-         </header>
-
-         <main>
-            <Routes>
+         <Routes>
+            <Route index element={<Layout projectsList={projectsList} />} />
+            {projectsList.map((project, index) => (
                <Route
-                  path="/"
-                  element={<Layout projectsList={projectsList} />}
+                  key={index}
+                  path={project.title}
+                  element={<ProjectPage project={project} />}
                />
-               {projectsList.map((project, index) => (
-                  <Route
-                     key={index}
-                     path={project.title}
-                     element={<ProjectPage content={project.title} />}
-                  />
-               ))}
-            </Routes>
-         </main>
-         <footer>Footer</footer>
+            ))}
+         </Routes>
       </div>
    );
 }

@@ -1,15 +1,22 @@
+import NavBar from "./navBar";
 import About from "./about";
 import Home from "./home";
 import Projects from "./projects";
-
-import { Outlet } from "react-router-dom";
+import Contact from "./contact";
 
 const Layout = ({ projectsList }) => {
    return (
       <>
-         <Home />
-         <About />
-         <Projects projectsList={projectsList} />
+         <header className="sticky-top">
+            <NavBar />
+         </header>
+         <main>
+            <Home />
+            <About />
+            <Projects projectsList={projectsList} />
+            <Contact />
+         </main>
+         <footer>Footer</footer>
       </>
    );
 };

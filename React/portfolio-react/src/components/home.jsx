@@ -20,8 +20,8 @@ const Home = () => {
             </div>
          </div>
          {/* <!-- entry text --> */}
-         <div className="row text-center center-all entry-text">
-            <div className="col px-0">
+         <div className="text-center center-all entry-text">
+            <div>
                <div className="text-white ">
                   <h4 className="">Hello</h4>
                   <h1 className="">I'm Yoel Bar-Lev</h1>

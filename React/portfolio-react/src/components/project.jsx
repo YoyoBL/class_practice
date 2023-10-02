@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Project = ({ project = {} }) => {
    return (
       <div className="col-12 col-lg-4 center-all ">
          <div className="card h-100 justify-content-between">
-            <a className="text-black text-decoration-none" href={project.link}>
+            <Link
+               className="text-black text-decoration-none"
+               to={project.title}
+            >
                <img
                   src={[
                      "./images/Sites_thumbnails/",
@@ -16,7 +21,7 @@ const Project = ({ project = {} }) => {
                   <h5 className="card-title">{project.title}</h5>
                   <p className="card-text">{project.description}</p>
                </div>
-            </a>
+            </Link>
             <div className="list-group list-group-flush">
                <a
                   href={["https://github.com/YoyoBL/", project.gitHubLink].join(

@@ -1,13 +1,18 @@
+import classNames from "classnames";
+import { useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
+
 const NavBar = () => {
+   const [navLink, setNavLink] = useState("home");
    return (
       <nav
-         className="navbar navbar-expand-lg border-bottom border-bottom-dark fixed-top"
+         className="navbar navbar-expand-lg border-bottom border-bottom-dark bg-black bg-opacity-25"
          data-bs-theme="dark"
       >
          <div className="container">
-            <a className="navbar-brand" href="#">
+            <span className="navbar-brand">
                #Yoel Bar-Lev | Full-stack developer
-            </a>
+            </span>
             <button
                className="navbar-toggler"
                type="button"
@@ -24,29 +29,51 @@ const NavBar = () => {
                id="navbarNav"
             >
                <ul className="navbar-nav">
-                  <li className="nav-item">
-                     <a
-                        className="nav-link active"
-                        aria-current="page"
-                        href="#home-screen"
+                  <li onClick={() => setNavLink("home")} className="nav-item">
+                     <Link
+                        to="#home-screen"
+                        className={classNames("nav-link", {
+                           active: navLink === "home",
+                        })}
                      >
                         Home
-                     </a>
+                     </Link>
                   </li>
-                  <li className="nav-item">
-                     <a className="nav-link" href="#about">
+                  <li onClick={() => setNavLink("about")} className="nav-item">
+                     <Link
+                        className={classNames("nav-link", {
+                           active: navLink === "about",
+                        })}
+                        to="#about"
+                     >
                         About me
-                     </a>
+                     </Link>
                   </li>
-                  <li className="nav-item">
-                     <a className="nav-link" href="#projects">
+                  <li
+                     onClick={() => setNavLink("projects")}
+                     className="nav-item"
+                  >
+                     <Link
+                        className={classNames("nav-link", {
+                           active: navLink === "projects",
+                        })}
+                        to="#projects"
+                     >
                         Projects
-                     </a>
+                     </Link>
                   </li>
-                  <li className="nav-item">
-                     <a className="nav-link" href="#contact">
+                  <li
+                     onClick={() => setNavLink("contact")}
+                     className="nav-item"
+                  >
+                     <Link
+                        className={classNames("nav-link", {
+                           active: navLink === "contact",
+                        })}
+                        to="#contact"
+                     >
                         Contact
-                     </a>
+                     </Link>
                   </li>
                </ul>
             </div>

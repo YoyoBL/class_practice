@@ -1,4 +1,5 @@
 import "../styles/about.css";
+import "../styles/general.css";
 import Technologies from "./technologies";
 
 const About = () => {
@@ -10,7 +11,7 @@ const About = () => {
          >
             <div className=" row row-cols-1 row-cols-md-2 p-4 ">
                <div className="col order-md-2 ">
-                  <div className="center-all about-me h-100 ">
+                  <div className="center-all frames h-100 ">
                      <img
                         src="./images/portfolio_img.jpg"
                         className="img-fluid object-fit-cover h-100 rounded-5"
@@ -18,7 +19,7 @@ const About = () => {
                      />
                   </div>
                </div>
-               <div className="col text-center text-white p-4 about-me h-100 ">
+               <div className="col text-center text-white p-4 frames h-100 ">
                   <h1>About me</h1>
                   <p className="mt-5 px-lg-5 ">
                      HI! I'm Yoel Bar-Lev, a dedicated full-stack developer with
@@ -37,7 +38,7 @@ const About = () => {
                   </p>
                </div>
             </div>
-            <Technologies />
+            <Technologies height={"100px"} />
          </section>
       </div>
    );
